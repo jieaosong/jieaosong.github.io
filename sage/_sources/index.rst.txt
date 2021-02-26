@@ -1,0 +1,9 @@
+.. nodoctest
+
+Rational points
+===============
+
+.. automodule:: rational_points
+   :members:
+   :undoc-members:
+   :show-inheritance:
