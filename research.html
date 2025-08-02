@@ -7,16 +7,19 @@
     <link rel="icon" href="https://sites.unimi.it/geoalg/favicon.ico">
     <title>Jieao Song</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <style>
-        div.page { padding-top: 60px; }
-        @media (min-width: 768px) { .container { width: 768px; }}
+        div.page { padding-top: 60px; overflow-x: auto; }
+        @media (min-width: 768px) { .container-fluid { width: 768px; }}
+        nav.navbar .nav-link.active { text-decoration-line: underline; }
         h1, h2, h3, h4 { margin-top: 20px; }
         div.software { margin-left: 5px; }
         div.software p { margin-left: 10px; }
         table th { display: none; }
-        table tr:first-child td { border: none; }
+        table tr:last-child td { border: none; }
         table td:first-child { font-weight: 700; white-space: nowrap; }
         img { max-width: 100%; }
         img[src*='#center'] { display: block; margin: auto; }
@@ -32,37 +35,40 @@
         .glyphicon { line-height: inherit; }
         .label { padding: .3em .6em .1em; }
         div.two-col ul { columns: 2; }
-	a code { color: inherit; background-color: inherit; padding: 0; font-family: monospace; }
+        a { text-decoration-line: none; }
+        div.page a:hover { text-decoration-line: underline; }
+        a code { color: inherit; background-color: inherit; padding: 0; font-family: monospace; }
         a span.tag { padding: 2px 4px; border-radius: 4px; font-family: monospace; font-size: 75%; color: inherit; background: inherit; white-space: nowrap; }
         a span.tag.arxiv    { color: #b31b1b; background: #f9f2f4; }
         a span.tag.doi      { color: #b38209; background: #f9f7f1; }
         a span.tag.thesesfr { color: #0096cc; background: #f0f2f9; }
+        a[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
+        a[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container">
-        <div class="navbar-header">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="https://jieaosong.github.io/index.html">Jieao Song</a>
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-<li class="active" ><a href="https://jieaosong.github.io/research.html">Research</a></li>
-<li  ><a href="https://jieaosong.github.io/cv.html">Curriculum vitæ</a></li>
-            </ul>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+<a class="nav-link active" aria-current="page" href="https://jieaosong.github.io/research.html">Research</a>
+<a class="nav-link" href="https://jieaosong.github.io/cv.html">Curriculum vitæ</a>
+                </ul>
 <ul class="nav navbar-nav navbar-right">
 </ul>
+            </div>
         </div>
-    </div></nav>
+    </nav>
     <!--/nav -->
-    <div class="page"><div class="container">
+    <div class="page">
+        <div class="container-fluid">
 <h2>Research papers</h2>
 <div class="pub-list" style="counter-reset: pub-counter 7;">
 <ol>
@@ -104,9 +110,7 @@ Université Paris Cité, 2022, under the supervision of <a href="https://webuser
 <a href="https://theses.fr/2022UNIP7214"><span class="tag thesesfr">theses.fr</span></a></li>
 </ol>
 </div>
-<p><a data-toggle="collapse" href="#softwares" markdown="1"></p>
-<h2>Softwares</h2>
-<p></a></p>
+<h2><a class="collapsed" data-bs-toggle="collapse" href="#softwares">Softwares</a></h2>
 <div class="collapse" id="softwares">
 <p>I have implemented the following softwares for the study of algebraic geometry.</p>
 <div class="software">
@@ -118,45 +122,44 @@ Université Paris Cité, 2022, under the supervision of <a href="https://webuser
 <p>A Sage package for doing computations using Bott&rsquo;s residue formula. It can be used to compute the Chern numbers of the known families of hyperkähler manifolds.</p>
 <h4>Miscellaneous</h4>
 <ul>
-<li>A <a href="https://jieaosong.github.io/static/llv.html">visualization</a> of LLV decomposition for known hyperkähler manifolds.</li>
+<li>A <a href="posts/llv">visualization</a> of LLV decomposition for known hyperkähler manifolds.</li>
 </ul>
 </div>
 </div>
-        <hr style="border-top: 2px solid #ccc">
-        <footer>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>Contact<br>
-                    <address>
-                    E-mail: <script type="text/javascript">
-                    <!--
-                    var tg="<";
-                    var nom="jieao.song";
-                    var arob="@";
+            <hr style="border-top: 2px solid #ccc">
+            <footer>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Contact<br>
+                        <address>
+                        E-mail: <script type="text/javascript">
+                        <!--
+                        var tg="<";
+                        var nom="jieao.song";
+                        var arob="@";
 
-                    var hote1="uni";
-                    var hote2="mi.it";
+                        var hote1="uni";
+                        var hote2="mi.it";
 
-                    document.write(tg+"a hr"+"ef=mai"+"lto:"+nom);
-                    document.write(arob+hote1+hote2+">"+nom+arob+hote1+hote2+tg+"/a>");
-                    -->
-                    </script>
-                    <br>
-                    URL: <a href="https://jieaosong.github.io/">https://jieaosong.github.io/</a>
-                    </address>
-                    </p>
+                        document.write(tg+"a hr"+"ef=mai"+"lto:"+nom);
+                        document.write(arob+hote1+hote2+">"+nom+arob+hote1+hote2+tg+"/a>");
+                        -->
+                        </script>
+                        <br>
+                        URL: <a href="https://jieaosong.github.io/">https://jieaosong.github.io/</a>
+                        </address>
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>Address<br>
+                        <address>Dipartimento di Matematica "F. Enriques"<br>Università degli Studi di Milano<br>Via Cesare Saldini 50<br>20133 Milano, Italy</address>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <p>Address<br>
-                    <address>Dipartimento di Matematica "F. Enriques"<br>Università degli Studi di Milano<br>Via Cesare Saldini 50<br>20133 Milano, Italy</address>
-                    </p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-    </div></div>
+                <!-- /.row -->
+            </footer>
+        </div>
+    </div>
     <!-- /.page -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
