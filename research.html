@@ -13,31 +13,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <style>
         div.page { padding-top: 60px; }
-	.sticky-top { top: 60px; }
+        .sticky-top { top: 60px; }
         @media (min-width: 768px) { .container-fluid { width: 768px; }}
         nav.navbar .nav-link.active { text-decoration-line: underline; }
         h1, h2, h3, h4 { margin-top: 20px; }
-        div.software { margin-left: 5px; }
-        div.software p { margin-left: 10px; }
-        table th { display: none; }
-        table tr:last-child td { border: none; }
-        table td:first-child { font-weight: 700; white-space: nowrap; }
         img { max-width: 100%; }
         img[src*='#center'] { display: block; margin: auto; }
         img[src*='#border'] { border: 1px solid #ddd; }
         
-        div.pub-list ol { list-style-type: none; padding-left: 0; }
-        div.pub-list li:before { counter-increment: pub-counter -1; content: counter(pub-counter, upper-roman) ". "; font-weight: 700; display: inline-block; width: 30px; margin-left: -30px; }
-        div.pub-list li { padding: 8px; padding-left: 38px; border-top: 1px solid #ddd; }
-        div.pub-list li:first-child { border: none; }
-        
-        ul.post-list { list-style-type: none; padding-left: 10px; }
-        span.date { display: inline-block; width: 85px; }
         .glyphicon { line-height: inherit; }
-        .label { padding: .3em .6em .1em; }
-        div.two-col ul { columns: 2; }
         a { text-decoration-line: none; }
         div.page a:hover { text-decoration-line: underline; }
+        a[href^='#'] { color: inherit; }
         a code { color: inherit; background-color: inherit; padding: 0; font-family: monospace; }
         a span.tag { padding: 2px 4px; border-radius: 4px; font-family: monospace; font-size: 75%; color: inherit; background: inherit; white-space: nowrap; }
         a span.tag.arxiv    { color: #b31b1b; background: #f9f2f4; }
@@ -45,15 +32,14 @@
         a span.tag.thesesfr { color: #0096cc; background: #f0f2f9; }
         a[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
         a[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
-        h2 a, a.abstract-button { color: inherit; }
-        span.abstract { color: dimgray; display: inline-block; }
-        span.abstract:before { content: "Abstract. "; font-weight: 700; }
-        span.inline-equation { font-size: 90%; }
         span.nowrap { white-space: nowrap; }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mathtex-script-type.min.js" integrity="sha384-sg4gBRJTqTCyzYbB7e72xGs3dA2LK994XRZS6urZW6Uh6Mu3j2JJ3YG2s9HALO8U" crossorigin="anonymous"></script>
+    <style>
+        span.inline-equation { font-size: 90%; }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
@@ -75,12 +61,34 @@
     <!--/nav -->
     <div class="page">
         <div class="container-fluid">
+<style>
+div.pub-list ol { list-style-type: none; padding-left: 0; }
+div.pub-list li:before { counter-increment: pub-counter -1; content: counter(pub-counter, upper-roman) ". "; font-weight: 700; display: inline-block; width: 30px; margin-left: -30px; }
+div.pub-list li { padding: 8px; padding-left: 38px; border-top: 1px solid #ddd; }
+div.pub-list li:first-child { border: none; }
+span.title { font-weight: 700; }
+span.title:not(:hover) { color: black; }
+span.abstract { color: dimgray; display: inline-block; }
+span.abstract:before { content: "Abstract. "; font-weight: 700; }
+
+div.software { margin-left: 5px; }
+div.software p { margin-left: 10px; }
+</style>
+
 <h2><a data-bs-toggle="collapse" href="#papers">Research papers</a></h2>
 <div class="collapse show" id="papers">
-<div class="pub-list" style="counter-reset: pub-counter 7;">
+<div class="pub-list" style="counter-reset: pub-counter 8;">
 <ol>
-<li><a href="https://jieaosong.github.io/docs/Cattani, Giovenzana, Liu, Magni, Martinelli, Pertusi, Song - Kernels of categorical resolutions of nodal singularities.pdf"><em>Kernels of categorical resolutions of nodal singularities</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-6"></a><br>
+<li><a href="https://arxiv.org/pdf/2510.02065"><span class="title">Projective models for Hilbert squares of <script type="math/tex">K3</script> surfaces</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-7"></a><br>
+with <a href="https://sites.google.com/view/angeldavidrios2/">Ángel David Ríos Ortiz</a> and <a href="https://www.ub.edu/geomap/rojas/">Andrés Rojas</a>.<br>
+<a href="https://arxiv.org/abs/2510.02065"><span class="tag arxiv">arXiv:2510.02065</span></a>
+<br>
+<span class="collapse abstract" id="abstract-7" markdown="1">
+For a very general polarized <script type="math/tex">K3</script> surface <script type="math/tex">S\subset \mathbb{P}^g</script> of genus <script type="math/tex">g\ge 5</script>, we study the linear system on the Hilbert square <script type="math/tex">S^{[2]}</script> parametrizing quadrics in <script type="math/tex">\mathbb{P}^g</script> that contain <script type="math/tex">S</script>. We prove its very ampleness for <script type="math/tex">g\geq 7</script>. In the cases of genus 7 or 8, we describe in detail the projective geometry of the corresponding embedding by making use of the Mukai model for <script type="math/tex">S</script>. In both cases, it can be realized as a degeneracy locus on an ambient homogeneous space, in a strikingly similar fashion. In consequence, we give explicit descriptions of its ideal and syzygies. Furthermore, we extract new information on the locally complete families, in a first step towards the understanding of their projective geometry.
+</span></li>
+<li><a href="https://jieaosong.github.io/docs/Cattani, Giovenzana, Liu, Magni, Martinelli, Pertusi, Song - Kernels of categorical resolutions of nodal singularities.pdf"><span class="title">Kernels of categorical resolutions of nodal singularities</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-6"></a><br>
 with Warren Cattani, <a href="https://sites.google.com/view/franco-giovenzana">Franco Giovenzana</a>, <a href="https://warwick.ac.uk/fac/sci/maths/people/staff/sliu/">Shengxuan Liu</a>, <a href="https://pjmagni.bitbucket.io/">Pablo Magni</a>, Luigi Martinelli, and <a href="http://www.mat.unimi.it/users/pertusi/">Laura Pertusi</a>,<br>
 Rend. Circ. Mat. Palermo (2) <strong>72</strong> (2023), 3077&ndash;3105.<br>
 <a href="https://arxiv.org/abs/2209.12853"><span class="tag arxiv">arXiv:2209.12853</span></a>
@@ -89,16 +97,16 @@ Rend. Circ. Mat. Palermo (2) <strong>72</strong> (2023), 3077&ndash;3105.<br>
 <span class="collapse abstract" id="abstract-6" markdown="1">
 In this paper we study derived categories of nodal singularities. We show that for all nodal singularities there is a categorical resolution whose kernel is generated by a 2 or 3-spherical object, depending on the dimension. We apply this result to the case of nodal cubic fourfolds, where we describe the kernel generator of the categorical resolution as an object in the bounded derived category of the associated degree six K3 surface. This paper originated from one of the problem sessions at the Interactive Workshop and Hausdorff School &ldquo;Hyperkähler Geometry&rdquo;, Bonn, September 6&ndash;10, 2021.
 </span></li>
-<li><a href="https://arxiv.org/pdf/2201.07767"><em>Second Chern class and Fujiki constants of hyperkähler manifolds</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-5"></a><br>
+<li><a href="https://arxiv.org/pdf/2201.07767"><span class="title">Second Chern class and Fujiki constants of hyperkähler manifolds</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-5"></a><br>
 with <a href="https://www.math.uni-bonn.de/people/beckmann/">Thorsten Beckmann</a>.<br>
 <a href="https://arxiv.org/abs/2201.07767"><span class="tag arxiv">arXiv:2201.07767</span></a>
 <br>
 <span class="collapse abstract" id="abstract-5" markdown="1">
 We study characteristic classes on hyperkähler manifolds with a view towards the Verbitsky component. The case of the second Chern class leads to a conditional upper bound on the second Betti number in terms of the Riemann&ndash;Roch polynomial, which is also valid for singular examples. We discuss the general structure of characteristic classes and the Riemann&ndash;Roch polynomial on hyperkähler manifolds using among other things Rozansky&ndash;Witten theory.
 </span></li>
-<li><a href="https://jieaosong.github.io/docs/Oberdieck, Song, Voisin - Hilbert schemes of K3 surfaces, generalized Kummer, and cobordism classes of hyper-Kähler manifolds.pdf"><em>Hilbert schemes of K3 surfaces, generalized Kummer, and cobordism classes of hyper-Kähler manifolds</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-4"></a><br>
+<li><a href="https://jieaosong.github.io/docs/Oberdieck, Song, Voisin - Hilbert schemes of K3 surfaces, generalized Kummer, and cobordism classes of hyper-Kähler manifolds.pdf"><span class="title">Hilbert schemes of K3 surfaces, generalized Kummer, and cobordism classes of hyper-Kähler manifolds</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-4"></a><br>
 with <a href="https://people.kth.se/~georgo/">Georg Oberdieck</a> and <a href="https://webusers.imj-prg.fr/~claire.voisin/">Claire Voisin</a>,<br>
 Pure Appl. Math. Q. <strong>18</strong> (2022), no. 4, 1723&ndash;1748.<br>
 <a href="https://arxiv.org/abs/2110.02211"><span class="tag arxiv">arXiv:2110.02211</span></a>
@@ -107,8 +115,8 @@ Pure Appl. Math. Q. <strong>18</strong> (2022), no. 4, 1723&ndash;1748.<br>
 <span class="collapse abstract" id="abstract-4" markdown="1">
 We prove that the complex cobordism class of any hyper-Kähler manifold of dimension <script type="math/tex">2n</script> is a unique combination with rational coefficients of classes of products of punctual Hilbert schemes of K3 surfaces. We also prove a similar result using the generalized Kummer varieties instead of punctual Hilbert schemes. As a key step, we establish a closed formula for the top Chern character of their tangent bundles.
 </span></li>
-<li><a href="https://jieaosong.github.io/docs/Song - A special Debarre-Voisin fourfold.pdf"><em>A special Debarre&ndash;Voisin fourfold</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-3"></a><br>
+<li><a href="https://jieaosong.github.io/docs/Song - A special Debarre-Voisin fourfold.pdf"><span class="title">A special Debarre&ndash;Voisin fourfold</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-3"></a><br>
 Bull. Soc. Math. France <strong>151</strong> (2023), no. 2, 305&ndash;330.<br>
 <a href="https://arxiv.org/abs/2106.13287"><span class="tag arxiv">arXiv:2106.13287</span></a>
 <a href="https://doi.org/10.24033/bsmf.2870"><span class="tag doi">doi:10.24033/bsmf.2870</span></a>
@@ -116,16 +124,16 @@ Bull. Soc. Math. France <strong>151</strong> (2023), no. 2, 305&ndash;330.<br>
 <span class="collapse abstract" id="abstract-3" markdown="1">
 Consider the finite simple group <script type="math/tex">\mathbf{G} \coloneqq \mathrm{PSL}(2, \mathbf{F}_{11})</script> of order 660, which has an irreducible representation <script type="math/tex">V_{10}</script> of dimension 10. In this note, we study a special trivector <script type="math/tex">\sigma_0 \in \bigwedge\mkern-4.5mu^3\mkern1mu V_{10}^\vee</script> that is <script type="math/tex">\mathbf{G}</script>-invariant. Following the construction of Debarre&ndash;Voisin, we obtain a smooth hyperkähler fourfold <script type="math/tex">X_6^{\sigma_0} \subset \mathrm{Gr}(6, V_{10})</script> with many symmetries. We will also look at the associated Peskine variety <span class="nowrap"><script type="math/tex">X_1^{\sigma_0} \subset \mathbf{P}(V_{10})</script>,</span> which is highly symmetric as well and admits 55 isolated singular points. It will help us to better understand the geometry of the special Debarre&ndash;Voisin fourfold <span class="nowrap"><script type="math/tex">X_6^{\sigma_0}</script>.</span> We also discuss an application of this example to the global geometry of the moduli space of Debarre&ndash;Voisin fourfolds.
 </span></li>
-<li><a href="https://arxiv.org/pdf/2106.06859"><em>Divisors in the moduli space of Debarre&ndash;Voisin varieties</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-2"></a><br>
+<li><a href="https://arxiv.org/pdf/2106.06859"><span class="title">Divisors in the moduli space of Debarre&ndash;Voisin varieties</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-2"></a><br>
 with <a href="https://sites.google.com/site/webpagevladimirobenedetti">Vladimiro Benedetti</a>.<br>
 <a href="https://arxiv.org/abs/2106.06859"><span class="tag arxiv">arXiv:2106.06859</span></a>
 <br>
 <span class="collapse abstract" id="abstract-2" markdown="1">
 Let <script type="math/tex">V_{10}</script> be a 10-dimensional complex vector space and let <script type="math/tex">\sigma\in\bigwedge\mkern-4.5mu^3\mkern1mu V_{10}^\vee</script> be a non-zero alternating 3-form. One can define several associated degeneracy loci: the Debarre&ndash;Voisin variety <span class="nowrap"><script type="math/tex">X_6^\sigma\subset\mathrm{Gr}(6,V_{10})</script>,</span> the Peskine variety <span class="nowrap"><script type="math/tex">X_1^\sigma\subset\mathbf{P}(V_{10})</script>,</span> and the hyperplane section <span class="nowrap"><script type="math/tex">X_3^\sigma\subset \mathrm{Gr}(3,V_{10})</script>.</span> Their interest stems from the fact that the Debarre&ndash;Voisin varieties form a locally complete family of projective hyperkähler fourfolds of <script type="math/tex">\mathrm{K3}^{[2]}</script>-type. We prove that when smooth, the varieties <span class="nowrap"><script type="math/tex">X_6^\sigma</script>,</span> <span class="nowrap"><script type="math/tex">X_1^\sigma</script>,</span> and <script type="math/tex">X_3^\sigma</script> share one same integral Hodge structure, and that <script type="math/tex">X_1^\sigma</script> and <script type="math/tex">X_3^\sigma</script> both satisfy the integral Hodge conjecture in all degrees. This is obtained as a consequence of a detailed analysis of the geometry of these varieties along three divisors in the moduli space. On one of the divisors, an associated K3 surface <script type="math/tex">S</script> of degree 6 can be constructed geometrically and the Debarre&ndash;Voisin fourfold is shown to be isomorphic to a moduli space of twisted sheaves on <span class="nowrap"><script type="math/tex">S</script>,</span> in analogy with the case of cubic fourfolds containing a plane.
 </span></li>
-<li><a href="https://jieaosong.github.io/docs/Song - On the image of the period map for polarized hyperkähler manifolds.pdf"><em>On the image of the period map for polarized hyperkähler manifolds</em></a>,
-<a class="collapsed abstract-button" data-bs-toggle="collapse" href="#abstract-1"></a>
+<li><a href="https://jieaosong.github.io/docs/Song - On the image of the period map for polarized hyperkähler manifolds.pdf"><span class="title">On the image of the period map for polarized hyperkähler manifolds</span></a>,
+<a class="collapsed" data-bs-toggle="collapse" href="#abstract-1"></a>
 <br>
 Int. Math. Res. Not. IMRN <strong>13</strong> (2023), 11404&ndash;11431.<br>
 <a href="https://arxiv.org/abs/2101.04791"><span class="tag arxiv">arXiv:2101.04791</span></a>
@@ -141,11 +149,11 @@ The moduli space for polarized hyperkähler manifolds of <script type="math/tex"
 <div class="collapse show" id="other">
 <div class="pub-list" style="counter-reset: pub-counter 3;">
 <ol>
-<li><a href="https://jieaosong.github.io/docs/Oberdieck, Song - The LLV decomposition of hyperkähler cohomology and applications to the Nagai conjecture (after Green-Kim-Laza-Robles).pdf"><em>The LLV decomposition of hyperkähler cohomology and applications to the Nagai conjecture (after Green&ndash;Kim&ndash;Laza&ndash;Robles)</em></a>,<br>
+<li><a href="https://jieaosong.github.io/docs/Oberdieck, Song - The LLV decomposition of hyperkähler cohomology and applications to the Nagai conjecture (after Green-Kim-Laza-Robles).pdf"><span class="title">The LLV decomposition of hyperkähler cohomology and applications to the Nagai conjecture (after Green&ndash;Kim&ndash;Laza&ndash;Robles)</span></a>,<br>
 with <a href="https://people.kth.se/~georgo/">Georg Oberdieck</a>,<br>
 Milan J. Math. <strong>90</strong> (2022), 485&ndash;501.<br>
 <a href="https://doi.org/10.1007/s00032-022-00362-1"><span class="tag doi">doi:10.1007/s00032-022-00362-1</span></a></li>
-<li><strong>PhD Thesis:</strong> <a href="https://jieaosong.github.io/docs/thesis_Jieao_Song.pdf"><em>Geometry of hyperkähler manifolds</em></a>,<br>
+<li><strong>PhD Thesis:</strong> <a href="https://jieaosong.github.io/docs/thesis_Jieao_Song.pdf"><span class="title">Geometry of hyperkähler manifolds</span></a>,<br>
 Université Paris Cité, 2022, under the supervision of <a href="https://webusers.imj-prg.fr/olivier.debarre">Olivier Debarre</a>.<br>
 <a href="https://theses.fr/2022UNIP7214"><span class="tag thesesfr">theses.fr</span></a></li>
 </ol>
