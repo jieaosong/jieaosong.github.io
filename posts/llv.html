@@ -3,23 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
     <meta name="author" content="Jieao Song">
-    <link rel="icon" href="https://sites.unimi.it/geoalg/favicon.ico">
     <title>LLV decomposition</title>
     <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <style>
-        div.page { padding-top: 60px; }
-        .sticky-top { top: 60px; }
+        div.page { padding-top: 56px; }
+        .sticky-top { position: sticky; top: 56px; }
         @media (min-width: 768px) { .container-fluid { width: 768px; }}
         nav.navbar .nav-link.active { text-decoration-line: underline; }
         h1, h2, h3, h4 { margin-top: 20px; }
         img { max-width: 100%; }
         img[src*='#center'] { display: block; margin: auto; }
         img[src*='#border'] { border: 1px solid #ddd; }
+        footer img { width: 16px; }
         
         .glyphicon { line-height: inherit; }
         a { text-decoration-line: none; }
@@ -30,8 +31,8 @@
         a span.tag.arxiv    { color: #b31b1b; background: #f9f2f4; }
         a span.tag.doi      { color: #b38209; background: #f9f7f1; }
         a span.tag.thesesfr { color: #0096cc; background: #f0f2f9; }
-        a[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
-        a[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
+        a.arrow[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
+        a.arrow[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
         span.nowrap { white-space: nowrap; }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
@@ -62,7 +63,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://jieaosong.github.io/index.html">Jieao Song</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
@@ -128,7 +129,7 @@ span.llv-full { cursor: pointer; }
   <div class="tab-pane fade show active" id="K3" role="tabpanel" aria-labelledby="K3-tab">
     <div id="llv-decomposition-K3" class="llv-decomposition"></div>
     <div id="diamond-K3" class="diamond"></div>
-    <a class="collapsed" data-bs-toggle="collapse" href="#hodge-K3" aria-expanded="false">Hodge structure</a>
+    <a class="arrow collapsed" data-bs-toggle="collapse" href="#hodge-K3" aria-expanded="false">Hodge structure</a>
     <div id="hodge-K3" class="hodge collapse"></div>
   </div>
   <div class="tab-pane fade" id="K3-n" role="tabpanel" aria-labelledby="K3-n-tab">
@@ -147,7 +148,7 @@ span.llv-full { cursor: pointer; }
     </p>
     <div id="llv-decomposition-K3-n" class="llv-decomposition"></div>
     <div id="diamond-K3-n" class="diamond"></div>
-    <a class="collapsed" data-bs-toggle="collapse" href="#hodge-K3-n" aria-expanded="false">Hodge structure</a>
+    <a class="arrow collapsed" data-bs-toggle="collapse" href="#hodge-K3-n" aria-expanded="false">Hodge structure</a>
     <div id="hodge-K3-n" class="hodge collapse"></div>
   </div>
   <div class="tab-pane fade" id="Kum-n" role="tabpanel" aria-labelledby="Kum-n-tab">
@@ -166,25 +167,25 @@ span.llv-full { cursor: pointer; }
     </p>
     <div id="llv-decomposition-Kum-n"></div>
     <div id="diamond-Kum-n" class="diamond"></div>
-    <a class="collapsed" data-bs-toggle="collapse" href="#hodge-Kum-n" aria-expanded="false">Hodge structure</a> 
+    <a class="arrow collapsed" data-bs-toggle="collapse" href="#hodge-Kum-n" aria-expanded="false">Hodge structure</a>
     <div id="hodge-Kum-n" class="hodge collapse"></div>
   </div>
   <div class="tab-pane fade" id="OG6" role="tabpanel" aria-labelledby="OG6-tab">
     <div id="llv-decomposition-OG6"></div>
     <div id="diamond-OG6" class="diamond"></div>
-    <a class="collapsed" data-bs-toggle="collapse" href="#hodge-OG6" aria-expanded="false">Hodge structure</a> 
+    <a class="arrow collapsed" data-bs-toggle="collapse" href="#hodge-OG6" aria-expanded="false">Hodge structure</a>
     <div id="hodge-OG6" class="hodge collapse"></div>
   </div>
   <div class="tab-pane fade" id="OG10" role="tabpanel" aria-labelledby="OG10-tab">
     <div id="llv-decomposition-OG10"></div>
     <div id="diamond-OG10" class="diamond"></div>
-    <a class="collapsed" data-bs-toggle="collapse" href="#hodge-OG10" aria-expanded="false">Hodge structure</a> 
+    <a class="arrow collapsed" data-bs-toggle="collapse" href="#hodge-OG10" aria-expanded="false">Hodge structure</a>
     <div id="hodge-OG10" class="hodge collapse"></div>
   </div>
 </div>
 
 <hr style="border-top: 2px solid #ccc">
-<p><a class="collapsed" data-bs-toggle="collapse" href="#code">Code</a></p>
+<p><a class="arrow collapsed" data-bs-toggle="collapse" href="#code">Code</a></p>
 <div id="code" class="collapse">
 <p>
 The following <tt>Sage</tt> code uses the <tt>LiE</tt> interface to compute the LLV decompositions for the two infinite families and then determines the irreducible Hodge structures.
@@ -527,16 +528,16 @@ def example(typ=("Type", selector(["K3^[n]", "Kum_n"])), n=slider(2,10,step_size
             <footer>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>Contact<br>
+                        <p>Contact</p>
                         <address>
                         E-mail: <script type="text/javascript">
                         <!--
                         var tg="<";
-                        var nom="jieao.song";
+                        var nom="song";
                         var arob="@";
 
-                        var hote1="uni";
-                        var hote2="mi.it";
+                        var hote1="mp"+"im-b";
+                        var hote2="onn.mp"+"g.de";
 
                         document.write(tg+"a hr"+"ef=mai"+"lto:"+nom);
                         document.write(arob+hote1+hote2+">"+nom+arob+hote1+hote2+tg+"/a>");
@@ -545,12 +546,16 @@ def example(typ=("Type", selector(["K3^[n]", "Kum_n"])), n=slider(2,10,step_size
                         <br>
                         URL: <a href="https://jieaosong.github.io/">https://jieaosong.github.io/</a>
                         </address>
+                        <p>
+                        <a href="https://arxiv.org/search/math?searchtype=author&query=Song,+Jieao" data-bs-toggle="tooltip" data-bs-title="arXiv"><img alt="arXiv" src="/images/icons/arxiv.png"/></a>
+                        <a href="https://zbmath.org/authors/song.jieao" data-bs-toggle="tooltip" data-bs-title="zbMATH"><img alt="zbMATH" src="/images/icons/zbmath.png"/></a>
+                        <a href="https://www.mathgenealogy.org/id.php?id=292365" data-bs-toggle="tooltip" data-bs-title="Math Genealogy"><img alt="Math Genealogy" src="/images/icons/mgp.png"/></a>
+                        <a href="https://scholar.google.com/citations?user=EnkMFfIAAAAJ" data-bs-toggle="tooltip" data-bs-title="Google Scholar"><img alt="Google Scholar" src="/images/icons/google_scholar.png"/></a>
                         </p>
                     </div>
                     <div class="col-sm-6">
-                        <p>Address<br>
-                        <address>Dipartimento di Matematica "F. Enriques"<br>Università degli Studi di Milano<br>Via Cesare Saldini 50<br>20133 Milano, Italy</address>
-                        </p>
+                        <p>Address</p>
+                        <address>Max Planck Institute for Mathematics<br>Vivatsgasse 7, 53111 Bonn, Germany<br>Office B13</address>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -558,5 +563,9 @@ def example(typ=("Type", selector(["K3^[n]", "Kum_n"])), n=slider(2,10,step_size
         </div>
     </div>
     <!-- /.page -->
+    <script type="text/javascript">
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 </html>
