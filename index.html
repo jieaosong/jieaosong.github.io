@@ -3,23 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
     <meta name="author" content="Jieao Song">
-    <link rel="icon" href="https://sites.unimi.it/geoalg/favicon.ico">
     <title>Jieao Song</title>
     <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <style>
-        div.page { padding-top: 60px; }
-        .sticky-top { top: 60px; }
+        div.page { padding-top: 56px; }
+        .sticky-top { position: sticky; top: 56px; }
         @media (min-width: 768px) { .container-fluid { width: 768px; }}
         nav.navbar .nav-link.active { text-decoration-line: underline; }
         h1, h2, h3, h4 { margin-top: 20px; }
         img { max-width: 100%; }
         img[src*='#center'] { display: block; margin: auto; }
         img[src*='#border'] { border: 1px solid #ddd; }
+        footer img { width: 16px; }
         
         .glyphicon { line-height: inherit; }
         a { text-decoration-line: none; }
@@ -30,13 +31,13 @@
         a span.tag.arxiv    { color: #b31b1b; background: #f9f2f4; }
         a span.tag.doi      { color: #b38209; background: #f9f7f1; }
         a span.tag.thesesfr { color: #0096cc; background: #f0f2f9; }
-        a[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
-        a[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
+        a.arrow[data-bs-toggle].collapsed:after { content: '\F229'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
+        a.arrow[data-bs-toggle]:not(.collapsed):after { content: '\F235'; font-family: bootstrap-icons; display: inline-block; font-size: 60%; margin-left: 0.5em; }
         span.nowrap { white-space: nowrap; }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://jieaosong.github.io/index.html">Jieao Song</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
@@ -61,8 +62,8 @@
 </div>
 <div class="col-sm-9">
 <h1>Jieao Song</h1>
-<p>I am currently a Postdoc researcher at University of Milan, working in the group of <a href="http://www.mat.unimi.it/users/camere/en/index.html">Chiara Camere</a>.</p>
-<p>I was previously a BMS Dirichlet Postdoc researcher at Humboldt-Universiät zu Berlin, in the group of <a href="https://www.mathematik.hu-berlin.de/~farkas/">Gavril Farkas</a>.</p>
+<p>I am a postdoctoral fellow at <a href="https://www.mpim-bonn.mpg.de/">Max Planck Institute for Mathematics Bonn</a> in the group of <a href="https://www.math.uni-bonn.de/people/huybrech/">Daniel Huybrechts</a>.</p>
+<p>I previously had a postdoc position at University of Milan with <a href="http://www.mat.unimi.it/users/camere/en/index.html">Chiara Camere</a>, and a BMS Dirichlet Fellowship at Humboldt-Universität zu Berlin with <a href="https://www.mathematik.hu-berlin.de/~farkas/">Gavril Farkas</a>.</p>
 <p>I got my PhD in July 2022 at <a href="https://www.imj-prg.fr/">IMJ-PRG</a>, Paris Cité University, under the supervision of <a href="https://webusers.imj-prg.fr/olivier.debarre">Olivier Debarre</a>.</p>
 <p>My field of research is complex algebraic geometry. More specifically, I am interested in the geometry of K3 surfaces and hyperkähler manifolds. More can be found on my <a href="research.html">Research</a> page.</p>
 </div>
@@ -71,16 +72,16 @@
             <footer>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>Contact<br>
+                        <p>Contact</p>
                         <address>
                         E-mail: <script type="text/javascript">
                         <!--
                         var tg="<";
-                        var nom="jieao.song";
+                        var nom="song";
                         var arob="@";
 
-                        var hote1="uni";
-                        var hote2="mi.it";
+                        var hote1="mp"+"im-b";
+                        var hote2="onn.mp"+"g.de";
 
                         document.write(tg+"a hr"+"ef=mai"+"lto:"+nom);
                         document.write(arob+hote1+hote2+">"+nom+arob+hote1+hote2+tg+"/a>");
@@ -89,12 +90,16 @@
                         <br>
                         URL: <a href="https://jieaosong.github.io/">https://jieaosong.github.io/</a>
                         </address>
+                        <p>
+                        <a href="https://arxiv.org/search/math?searchtype=author&query=Song,+Jieao" data-bs-toggle="tooltip" data-bs-title="arXiv"><img alt="arXiv" src="/images/icons/arxiv.png"/></a>
+                        <a href="https://zbmath.org/authors/song.jieao" data-bs-toggle="tooltip" data-bs-title="zbMATH"><img alt="zbMATH" src="/images/icons/zbmath.png"/></a>
+                        <a href="https://www.mathgenealogy.org/id.php?id=292365" data-bs-toggle="tooltip" data-bs-title="Math Genealogy"><img alt="Math Genealogy" src="/images/icons/mgp.png"/></a>
+                        <a href="https://scholar.google.com/citations?user=EnkMFfIAAAAJ" data-bs-toggle="tooltip" data-bs-title="Google Scholar"><img alt="Google Scholar" src="/images/icons/google_scholar.png"/></a>
                         </p>
                     </div>
                     <div class="col-sm-6">
-                        <p>Address<br>
-                        <address>Dipartimento di Matematica "F. Enriques"<br>Università degli Studi di Milano<br>Via Cesare Saldini 50<br>20133 Milano, Italy</address>
-                        </p>
+                        <p>Address</p>
+                        <address>Max Planck Institute for Mathematics<br>Vivatsgasse 7, 53111 Bonn, Germany<br>Office B13</address>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -102,5 +107,9 @@
         </div>
     </div>
     <!-- /.page -->
+    <script type="text/javascript">
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 </html>
